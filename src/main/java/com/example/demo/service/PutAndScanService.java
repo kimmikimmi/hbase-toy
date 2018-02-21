@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -42,7 +43,7 @@ public class PutAndScanService {
 		p.addColumn(Bytes.toBytes("cf"), Bytes.toBytes("b"), Bytes.toBytes("value2"));
 		puts.add(p);
 
-		System.out.println("row of p  : " + p.getRow());
+		System.out.println("row of p  : " + Arrays.toString(p.getRow()));
 
 		Put p2 = new Put(Bytes.toBytes("row3"));
 		p2.addColumn(Bytes.toBytes("cf2"), Bytes.toBytes("c"), Bytes.toBytes("value3"));
